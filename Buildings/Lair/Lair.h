@@ -27,6 +27,7 @@ namespace game
 		Lair(std::string t_path, Point t_position, Point t_scale = { 1,1 });
 		void createWay(Field* field);
 		void addEnemy(MainScene* hw, Field* field, int t_life);
+
 		float getSpeed() { return speed; };
 		float getHeight() { return height; };
 		float getRate() { return rate; };

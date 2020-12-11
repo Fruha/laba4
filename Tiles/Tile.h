@@ -7,6 +7,7 @@
 #include "Buildings/Castle/Castle.h"
 #include "Buildings/Lair/Lair.h"
 #include "Buildings/Trap/Trap.h"
+#include "Vector/MyVector.h"
 
 namespace game 
 {
@@ -28,7 +29,7 @@ namespace game
 		Tile() :
 			ClickableObject()
 		{};
-		Tile(std::string t_path, Point t_position, std::vector<Point> ClickPoligon_t, Point t_scale) :
+		Tile(std::string t_path, Point t_position, MyVector<Point> ClickPoligon_t, Point t_scale) :
 			ClickableObject(t_path, t_position, ClickPoligon_t, t_scale)
 		{};
 

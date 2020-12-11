@@ -6,7 +6,7 @@
 #include <numbers>
 #include "ui/CocosGUI.h"
 #include "GameInfo.h"
-#include "UnitTest/TestAll.h"
+#include "UnitTest/TestsMain.h"
 
 USING_NS_CC;
 
@@ -27,8 +27,8 @@ namespace game
             return false;
         }
 
-        unitTest::TestAll testAll = unitTest::TestAll();
-        testAll.testAll(this);
+        unitTest::TestsMain testsMain = unitTest::TestsMain();
+        testsMain.testAll(this);
 
         mainMenu = new MainMenu(Point(1425, 400));
         this->scheduleUpdate();

@@ -5,6 +5,7 @@
 #include "Tiles/Field.h"
 #include "MenuObject/MainMenu.h"
 #include "GameInfo.h"
+#include "Vector/MyVector.h"
 
 namespace game 
 {
@@ -12,7 +13,7 @@ namespace game
 		GameObject(t_position),
 		type(t_type)
 	{
-		std::vector<std::vector<std::string>> allObjectsPaths = 
+		MyVector<MyVector<std::string>> allObjectsPaths = 
 		{ 
 			{
 				"Isometric Tower defence pack/Sprites/Menu/Towers/redTower.png",
@@ -31,7 +32,7 @@ namespace game
 			}
 		};
 
-		std::vector<std::vector<Point>> allObjectsScales =
+		MyVector<MyVector<Point>> allObjectsScales =
 		{
 			{
 				Point(0.15, 0.15),
@@ -50,9 +51,9 @@ namespace game
 			}
 		};
 		
-		stats = std::vector<GameObject>();
+		stats = MyVector<GameObject>();
 		Tile* selectedTile = hw->getField()->getSelectedTile();
-		std::vector<std::vector<std::string>> names;
+		MyVector<MyVector<std::string>> names;
 		switch (type)
 		{
 		case MENU_SHOP_TOWERS:
@@ -240,7 +241,7 @@ namespace game
 			};
 			break;
 		}
-		menuSelections = std::vector<ClickableObject>();
+		menuSelections = MyVector<ClickableObject>();
 		menuSelections.resize(allObjectsPaths[type].size());
 		for (int i = 0; i < allObjectsPaths[type].size(); i += 1)
 		{
@@ -257,7 +258,7 @@ namespace game
 				Point(0.3, 0.3)
 			);
 		}
-		objects = std::vector<GameObject>();
+		objects = MyVector<GameObject>();
 		objects.resize(allObjectsPaths[type].size());
 		for (int i = 0; i < allObjectsPaths[type].size(); i += 1)
 		{

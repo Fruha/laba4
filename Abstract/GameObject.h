@@ -47,7 +47,6 @@ namespace game
 			label->setScale(scaleLabel.x, scaleLabel.y);
 		};
 
-		void setPosition(Point t_position, Point scale);
 
 		Point getPosition() { return position; };
 		std::string getPath() { return path; };
@@ -57,6 +56,7 @@ namespace game
 
 		void setPath(std::string t_path) { path = t_path; };
 		void setIsShow(bool t_isShow) { isShow = t_isShow; };
+		void setPosition(Point t_position, Point scale = {1,1});
 
 		void show(MainScene* hw, int show_level);
 		void hide(MainScene* hw);
